@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+    <h2>Your Watchlist</h2>
+    <table id="watchlist-table">
+        <thead>
+            <tr>
+                <th>Ticker</th>
+                <th>Current Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows dynamically inserted by JavaScript -->
+        </tbody>
+    </table>
+</section>
+<section>
+    <h3>Add Stock</h3>
+    <form id="add-stock-form">
+        <input type="text" id="ticker-input" placeholder="Enter Ticker" required>
+        <button type="submit">Add</button>
+    </form>
+</section>
+{% endblock %}
