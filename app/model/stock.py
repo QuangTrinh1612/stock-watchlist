@@ -7,6 +7,9 @@ class Stock:
         self.ticker = ticker.upper()
         self.price = price
 
+    def get_price(self) -> float:
+        return self.price
+
     def update_price(self, new_price: float):
         """
         Updates the stock's price.
