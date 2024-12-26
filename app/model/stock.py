@@ -1,18 +1,23 @@
-import yfinance as yf
-
 class Stock:
-    def __init__(self, ticker):
-        self.ticker = ticker
-        self.data = None
+    """
+    Represents a stock with a ticker symbol and associated details.
+    """
 
-    def fetch_data(self):
-        self.data = yf.Ticker(self.ticker)
-        return self.data.history(period="1mo")
+    def __init__(self, ticker: str, price: float = None):
+        self.ticker = ticker.upper()
+        self.price = price
 
-    def get_price(self):
-        if self.data:
-            return self.data.history(period="1d")['Close'].iloc[-1]
-        return None
+    def update_price(self, new_price: float):
+        """
+        Updates the stock's price.
+        """
+        self.price = new_price
 
-    def get_chart_data(self):
-        return self.fetch_data()
+    def to_dict(self):
+        """
+        Converts the stock instance to a dictionary for JSON serialization.
+        """
+        return {
+            "ticker": self.ticker,
+            "price": self.price,
+        }

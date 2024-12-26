@@ -7,7 +7,7 @@ watchlist = Watchlist()
 @router.get("/api/watchlist")
 async def get_watchlist():
     """Retrieve all stocks in the watchlist."""
-    return {"watchlist": watchlist.get_all_stocks()}
+    return {"watchlist": watchlist.list_stocks()}
 
 @router.post("/api/watchlist")
 async def add_to_watchlist(ticker: str):

@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
+
 from app.route.home import router as home_router
 from app.route.api_watchlist import router as watchlist_router
 from app.route.api_stock import router as stock_router
